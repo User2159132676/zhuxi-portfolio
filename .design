@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "id": "page-index",
+      "title": "朱曦",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1786953600000,
+      "canvasData": {
+        "x": 0,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 5037,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-b69662f6",
+          "measuredAt": 1786953827522
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/index.html",
+        "interactions": []
+      }
+    }
+  ],
+  "config": {
+    "autoLayout": true,
+    "deviceType": "desktop",
+    "projectName": "朱曦求职作品集"
+  }
+}

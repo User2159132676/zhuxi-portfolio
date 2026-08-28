@@ -1,0 +1,97 @@
+{
+  "success": true,
+  "outcome": "passed",
+  "repairable": true,
+  "terminalViolations": [],
+  "terminalBlockingSummary": null,
+  "skillProvenance": {
+    "name": "solo-design",
+    "version": "2026.08.06.19.15.08",
+    "version_source": "skill-release-manifest.json",
+    "runtime_skill_dir": "c:\\Users\\86155\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+    "recorded_at": null,
+    "expected_version": "2026.08.06.19.15.08",
+    "status": "manifest_fallback",
+    "read_status": "ok",
+    "reason": "runtime-orchestration-summary.json missing skillProvenance; used skill-release-manifest.json"
+  },
+  "operatingMode": "free-explore",
+  "renderBlockingErrorCount": 0,
+  "softWarningCount": 1,
+  "renderBlockingErrors": [],
+  "errorSignatures": [],
+  "softWarnings": [
+    "[orchestration-summary] runtime-orchestration-summary.json is missing skillProvenance.name/version/version_source. Version provenance will be reported as observed_unknown by external evaluators."
+  ],
+  "repairPlanHints": [],
+  "repairActionTable": [],
+  "errorCount": 0,
+  "warningCount": 1,
+  "errors": [],
+  "warnings": [
+    "[orchestration-summary] runtime-orchestration-summary.json is missing skillProvenance.name/version/version_source. Version provenance will be reported as observed_unknown by external evaluators."
+  ],
+  "validationRunDisciplineStatus": {
+    "declared": true,
+    "restoreMode": false,
+    "maxFullValidationRuns": 2,
+    "validationHistoryCount": 0,
+    "repairLedgerCount": 0,
+    "softWarningsTriggerRepair": false,
+    "terminalState": null,
+    "nextAction": null,
+    "violations": [],
+    "success": true
+  },
+  "terminalState": null,
+  "nextCheck": {
+    "type": "finish-readiness",
+    "command": "node \"c:\\Users\\86155\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs\" \"C:\\Users\\86155\\AppData\\Roaming\\TRAE SOLO CN\\ModularData\\ai-agent\\work-mode-projects\\6a82b5209b418d1bbfd4075b\\zhuxi-portfolio\" --check=all",
+    "fullValidationAllowed": false,
+    "reason": "workspace validation passed; run complete finish readiness before final delivery"
+  },
+  "repairBatch": [],
+  "repairContextPacket": {
+    "schema_version": "1.0",
+    "purpose": "small-context repair packet; read this before full validation-report.json",
+    "success": true,
+    "terminalState": null,
+    "skillProvenance": {
+      "name": "solo-design",
+      "version": "2026.08.06.19.15.08",
+      "version_source": "skill-release-manifest.json",
+      "runtime_skill_dir": "c:\\Users\\86155\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+      "recorded_at": null,
+      "expected_version": "2026.08.06.19.15.08",
+      "status": "manifest_fallback",
+      "read_status": "ok",
+      "reason": "runtime-orchestration-summary.json missing skillProvenance; used skill-release-manifest.json"
+    },
+    "renderBlockingErrorCount": 0,
+    "softWarningCount": 1,
+    "renderBlockingErrors": [],
+    "repairActionTable": [],
+    "nextCheck": {
+      "type": "finish-readiness",
+      "command": "node \"c:\\Users\\86155\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs\" \"C:\\Users\\86155\\AppData\\Roaming\\TRAE SOLO CN\\ModularData\\ai-agent\\work-mode-projects\\6a82b5209b418d1bbfd4075b\\zhuxi-portfolio\" --check=all",
+      "fullValidationAllowed": false,
+      "reason": "workspace validation passed; run complete finish readiness before final delivery"
+    },
+    "forbidden": [
+      "do not read validator source",
+      "do not rerun full validation when nextCheck.fullValidationAllowed=false",
+      "do not start preview/browser unless user explicitly asks",
+      "do not hand-edit repair ledger fields"
+    ]
+  },
+  "projectFileHashes": {
+    ".design": "6a7a83356617619e3a469dfbbc89c63ee74f9a244f871733f7670c43a2a68bc3",
+    "colors_and_type.css": "623c19fa2fbc7610f99854e05c18891cc677121165f547e73a04fdade400e675",
+    "runtime-orchestration-summary.json": "6c649b93544f0cb780960d3a94758b9555baf51ce77a47418a10ab758defc021",
+    "pages/index.html": "7d248637d93f6184c5e8f3a9878909b7ac43cc690e702f87a1370a5250dcd0bb"
+  },
+  "designDir": "C:\\Users\\86155\\AppData\\Roaming\\TRAE SOLO CN\\ModularData\\ai-agent\\work-mode-projects\\6a82b5209b418d1bbfd4075b\\zhuxi-portfolio",
+  "expectedPages": null,
+  "requireInteractions": null,
+  "checkedAt": "2026-08-18T01:19:12.911Z"
+}

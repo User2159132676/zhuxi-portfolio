@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>朱曦</title>
+    <style id="theme-vars">
+:root {
+  /* Brand prefix: zhuxi */
+  --zhuxi-background: #FAFAF8;
+  --zhuxi-foreground: #1A1A1A;
+  --zhuxi-card: #FFFFFF;
+  --zhuxi-card-foreground: #1A1A1A;
+  --zhuxi-popover: #FFFFFF;
+  --zhuxi-popover-foreground: #1A1A1A;
+  --zhuxi-primary: #1B4D4B;
+  --zhuxi-primary-foreground: #FFFFFF;
+  --zhuxi-muted: #F5F5F3;
+  --zhuxi-muted-foreground: #666666;
+  --zhuxi-border: #E8E8E6;
+  --zhuxi-input: #E8E8E6;
+  --zhuxi-ring: #1B4D4B;
+
+  --zhuxi-radius-sm: 4px;
+  --zhuxi-radius-md: 8px;
+  --zhuxi-radius-lg: 16px;
+  --zhuxi-radius-pill: 999px;
+
+  /* Semantic aliases for free-explore */
+  --bg: var(--zhuxi-background);
+  --surface: var(--zhuxi-card);
+  --surface-2: var(--zhuxi-muted);
+  --ink: var(--zhuxi-foreground);
+  --ink-2: var(--zhuxi-muted-foreground);
+  --ink-3: #999999;
+  --line: var(--zhuxi-border);
+  --brand: var(--zhuxi-primary);
+  --brand-ink: var(--zhuxi-primary-foreground);
+  --brand-hover: #153D3B;
+
+  --shadow-1: 0 1px 2px rgba(26,26,26,0.04), 0 1px 1px rgba(26,26,26,0.02);
+  --shadow-2: 0 8px 24px -8px rgba(26,26,26,0.14);
+
+  /* Typography */
+  --font-sans: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-mono: "SF Mono", "Fira Code", "JetBrains Mono", Menlo, Consolas, monospace;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  font-feature-settings: "tnum";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--zhuxi-background);
+    --color-foreground: var(--zhuxi-foreground);
+    --color-card: var(--zhuxi-card);
+    --color-card-foreground: var(--zhuxi-card-foreground);
+    --color-popover: var(--zhuxi-popover);
+    --color-popover-foreground: var(--zhuxi-popover-foreground);
+    --color-primary: var(--zhuxi-primary);
+    --color-primary-foreground: var(--zhuxi-primary-foreground);
+    --color-muted: var(--zhuxi-muted);
+    --color-muted-foreground: var(--zhuxi-muted-foreground);
+    --color-border: var(--zhuxi-border);
+    --color-input: var(--zhuxi-input);
+    --color-ring: var(--zhuxi-ring);
+    --radius-sm: var(--zhuxi-radius-sm);
+    --radius-md: var(--zhuxi-radius-md);
+    --radius-lg: var(--zhuxi-radius-lg);
+  }
+  @layer base {
+    body { background: var(--zhuxi-background); color: var(--zhuxi-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--zhuxi-background); }
+      .text-background { color: var(--zhuxi-background); }
+      .border-background { border-color: var(--zhuxi-background); }
+      .ring-background { --tw-ring-color: var(--zhuxi-background); }
+      .bg-foreground { background-color: var(--zhuxi-foreground); }
+      .text-foreground { color: var(--zhuxi-foreground); }
+      .border-foreground { border-color: var(--zhuxi-foreground); }
+      .ring-foreground { --tw-ring-color: var(--zhuxi-foreground); }
+      .bg-card { background-color: var(--zhuxi-card); }
+      .text-card { color: var(--zhuxi-card); }
+      .border-card { border-color: var(--zhuxi-card); }
+      .ring-card { --tw-ring-color: var(--zhuxi-card); }
+      .bg-card-foreground { background-color: var(--zhuxi-card-foreground); }
+      .text-card-foreground { color: var(--zhuxi-card-foreground); }
+      .border-card-foreground { border-color: var(--zhuxi-card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--zhuxi-card-foreground); }
+      .bg-popover { background-color: var(--zhuxi-popover); }
+      .text-popover { color: var(--zhuxi-popover); }
+      .border-popover { border-color: var(--zhuxi-popover); }
+      .ring-popover { --tw-ring-color: var(--zhuxi-popover); }
+      .bg-popover-foreground { background-color: var(--zhuxi-popover-foreground); }
+      .text-popover-foreground { color: var(--zhuxi-popover-foreground); }
+      .border-popover-foreground { border-color: var(--zhuxi-popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--zhuxi-popover-foreground); }
+      .bg-primary { background-color: var(--zhuxi-primary); }
+      .text-primary { color: var(--zhuxi-primary); }
+      .border-primary { border-color: var(--zhuxi-primary); }
+      .ring-primary { --tw-ring-color: var(--zhuxi-primary); }
+      .bg-primary-foreground { background-color: var(--zhuxi-primary-foreground); }
+      .text-primary-foreground { color: var(--zhuxi-primary-foreground); }
+      .border-primary-foreground { border-color: var(--zhuxi-primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--zhuxi-primary-foreground); }
+      .bg-muted { background-color: var(--zhuxi-muted); }
+      .text-muted { color: var(--zhuxi-muted); }
+      .border-muted { border-color: var(--zhuxi-muted); }
+      .ring-muted { --tw-ring-color: var(--zhuxi-muted); }
+      .bg-muted-foreground { background-color: var(--zhuxi-muted-foreground); }
+      .text-muted-foreground { color: var(--zhuxi-muted-foreground); }
+      .border-muted-foreground { border-color: var(--zhuxi-muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--zhuxi-muted-foreground); }
+      .bg-border { background-color: var(--zhuxi-border); }
+      .text-border { color: var(--zhuxi-border); }
+      .border-border { border-color: var(--zhuxi-border); }
+      .ring-border { --tw-ring-color: var(--zhuxi-border); }
+      .bg-input { background-color: var(--zhuxi-input); }
+      .text-input { color: var(--zhuxi-input); }
+      .border-input { border-color: var(--zhuxi-input); }
+      .ring-input { --tw-ring-color: var(--zhuxi-input); }
+      .bg-ring { background-color: var(--zhuxi-ring); }
+      .text-ring { color: var(--zhuxi-ring); }
+      .border-ring { border-color: var(--zhuxi-ring); }
+      .ring-ring { --tw-ring-color: var(--zhuxi-ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+    
+    <script>lucide.createIcons();</script>
+<main class="bg-background text-foreground" data-editor-id="editor-node-mswxjjg7-1">
+      <style id="critical-layout">
+        main { overflow-x: hidden; }
+        .balance { text-wrap: balance; word-break: keep-all; }
+        .section-pad { padding-top: 5rem; padding-bottom: 5rem; }
+        @media (min-width: 768px) {
+          .section-pad { padding-top: 6rem; padding-bottom: 6rem; }
+        }
+        .card-lift { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-lift:hover { transform: translateY(-4px); box-shadow: var(--shadow-2); }
+        .icon-slide { transition: transform 0.2s ease; }
+        .group:hover .icon-slide { transform: translateX(4px); }
+        .reveal {
+          opacity: 0;
+          transform: translateY(24px);
+          transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        #skills-app .card-lift {
+          opacity: 0;
+          transform: translateY(20px);
+          animation: fadeInUp 0.6s ease forwards;
+        }
+        @keyframes fadeInUp {
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .copy-toast {
+          position: fixed;
+          bottom: 2rem;
+          left: 50%;
+          z-index: 50;
+          transform: translateX(-50%) translateY(20px);
+          border-radius: 999px;
+          background-color: var(--zhuxi-foreground);
+          color: var(--zhuxi-background);
+          padding: 0.75rem 1.5rem;
+          font-size: 0.875rem;
+          font-weight: 500;
+          box-shadow: var(--shadow-2);
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+        .copy-toast.visible {
+          opacity: 1;
+          transform: translateX(-50%) translateY(0);
+        }
+        .copy-hint {
+          display: none;
+          font-size: 0.75rem;
+          color: var(--zhuxi-muted-foreground);
+          margin-left: 0.25rem;
+          white-space: nowrap;
+        }
+        [data-revealed] .copy-hint {
+          display: inline;
+        }
+        footer [data-revealed] .copy-hint {
+          color: rgba(255, 255, 255, 0.6);
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .card-lift, .icon-slide { transition: none; }
+          .reveal, #skills-app .card-lift { opacity: 1; transform: none; animation: none; }
+          .copy-toast { transition: none; }
+        }
+      </style>
+
+      <section id="hero" class="reveal relative flex min-h-[85vh] flex-col justify-center px-6 lg:px-8">
+        <div class="mx-auto w-full max-w-6xl">
+          <h1 class="balance text-5xl font-bold tracking-tight text-foreground md:text-7xl lg:text-8xl">朱曦</h1>
+          <p class="balance mt-5 max-w-2xl text-xl leading-relaxed text-muted-foreground md:text-2xl">软件工程本科 · 擅长页面还原、响应式布局与简单交互实现，也能完成移动端适配</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <button type="button" data-reveal-email class="inline-flex items-center gap-2 rounded-full bg-muted px-4 py-2 text-sm text-muted-foreground transition hover:bg-muted/80">
+              <i data-lucide="mail" class="h-4 w-4"></i>
+              <span class="email-text">点击查看邮箱</span>
+              <span class="copy-hint">· 再次点击可复制</span>
+            </button>
+            <button type="button" data-reveal-phone class="inline-flex items-center gap-2 rounded-full bg-muted px-4 py-2 text-sm text-muted-foreground transition hover:bg-muted/80">
+              <i data-lucide="phone" class="h-4 w-4"></i>
+              <span class="phone-text">点击查看电话</span>
+              <span class="copy-hint">· 再次点击可复制</span>
+            </button>
+          </div>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="#" data-email-link class="group inline-flex items-center gap-3 rounded-full bg-primary px-7 py-3.5 text-base font-medium text-primary-foreground shadow-sm transition hover:bg-primary/90">
+              <span>发送邮件</span>
+              <i data-lucide="arrow-right" class="icon-slide h-5 w-5"></i>
+            </a>
+            <a href="#" data-phone-link class="group inline-flex items-center gap-3 rounded-full border border-primary bg-primary/10 px-7 py-3.5 text-base font-medium text-primary transition hover:bg-primary/20">
+              <span>拨打电话</span>
+              <i data-lucide="phone" class="icon-slide h-5 w-5"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="reveal section-pad px-6 lg:px-8">
+        <div class="mx-auto max-w-6xl">
+          <div class="grid gap-8 lg:grid-cols-12">
+            <div class="lg:col-span-4">
+              <h2 class="balance text-3xl font-bold text-foreground">关于我</h2>
+              <div class="mt-4 h-1 w-12 rounded-full bg-primary"></div>
+            </div>
+            <div class="lg:col-span-8">
+              <p class="text-lg leading-relaxed text-muted-foreground">
+                我是一名软件工程本科在读学生，技术栈为 HTML、CSS、JavaScript 与 Vue 3，会用 AI 工具辅助写代码，熟练使用 Trae、Cursor、VS Code、IDEA 等开发工具。我热爱把设计稿变成清晰可用的网页，后续会继续往全栈方向深入学习。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="education" class="reveal section-pad px-6 lg:px-8 bg-muted/40">
+        <div class="mx-auto max-w-6xl">
+          <div class="mb-10 flex items-center gap-4">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+              <i data-lucide="graduation-cap" class="h-5 w-5"></i>
+            </div>
+            <h2 class="balance text-3xl font-bold text-foreground">教育背景</h2>
+          </div>
+          <article class="card-lift rounded-lg border border-border bg-card p-6 md:p-8">
+            <div class="flex flex-col justify-between gap-4 md:flex-row md:items-center">
+              <div>
+                <h3 class="balance text-xl font-semibold text-card-foreground">吉首大学</h3>
+                <p class="mt-1 text-muted-foreground">软件工程 · 本科</p>
+              </div>
+              <time class="inline-flex items-center gap-2 rounded-full bg-muted px-4 py-1.5 text-sm text-muted-foreground">
+                <i data-lucide="calendar" class="h-4 w-4"></i>
+                2022.09 – 2027.06
+              </time>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="section-pad px-6 lg:px-8">
+        <div class="mx-auto max-w-6xl">
+          <div class="mb-10 flex items-center gap-4">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+              <i data-lucide="code-2" class="h-5 w-5"></i>
+            </div>
+            <h2 class="balance text-3xl font-bold text-foreground">核心技能</h2>
+          </div>
+          <div id="skills-app" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <article v-for="(skill, index) in skills" :key="skill.title" class="card-lift rounded-lg border border-border bg-card p-6" :style="{ animationDelay: index * 80 + 'ms' }">
+              <div class="mb-4 flex items-center gap-3">
+                <i :data-lucide="skill.icon" class="h-5 w-5 text-primary"></i>
+                <h3 class="balance text-lg font-semibold text-card-foreground">{{ skill.title }}</h3>
+              </div>
+              <p class="text-sm leading-relaxed text-muted-foreground">{{ skill.desc }}</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="reveal section-pad px-6 lg:px-8 bg-muted/40">
+        <div class="mx-auto max-w-6xl">
+          <div class="mb-10 flex items-center gap-4">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+              <i data-lucide="folder" class="h-5 w-5"></i>
+            </div>
+            <h2 class="balance text-3xl font-bold text-foreground">项目经历</h2>
+          </div>
+          <div class="grid gap-8">
+            <article class="card-lift rounded-lg border border-border bg-card p-6 md:p-8">
+              <div class="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <h3 class="balance text-xl font-semibold text-card-foreground">敬老院管理系统</h3>
+                  <p class="mt-1 text-sm text-muted-foreground">课程项目 · 负责前端页面与样式</p>
+                </div>
+                <span class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">负责前端页面</span>
+              </div>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-md bg-muted px-2.5 py-1 text-xs text-muted-foreground">HTML</span>
+                <span class="rounded-md bg-muted px-2.5 py-1 text-xs text-muted-foreground">CSS</span>
+                <span class="rounded-md bg-muted px-2.5 py-1 text-xs text-muted-foreground">页面布局</span>
+                <span class="rounded-md bg-muted px-2.5 py-1 text-xs text-muted-foreground">表单 UI</span>
+              </div>
+              <p class="mt-5 text-sm leading-relaxed text-muted-foreground">课程小组项目，我在其中负责前端页面与样式实现。根据功能需求完成了老人信息录入、日常照料记录、信息查询等模块的页面结构与样式，保证表单清晰易用。</p>
+              <div class="mt-5">
+                <h4 class="text-sm font-semibold text-card-foreground">负责内容</h4>
+                <ul class="mt-2 list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted-foreground">
+                  <li>使用 HTML/CSS 搭建后台管理系统的多个功能页面，完成表单、表格、按钮等基础组件的样式。</li>
+                  <li>实现响应式页面布局，优化不同屏幕下的信息展示与操作体验。</li>
+                  <li>配合后端接口调整页面结构，修复前端样式与交互细节问题，保证页面视觉统一。</li>
+                </ul>
+              </div>
+              <div class="mt-5 rounded-md border-l-2 border-primary bg-muted/50 p-4">
+                <p class="text-sm leading-relaxed text-muted-foreground"><strong class="text-foreground">收获：</strong>加深了对 HTML/CSS 实际应用的理解，学会了在小组协作中对接需求、调整页面。</p>
+              </div>
+            </article>
+
+            <article class="card-lift rounded-lg border border-border bg-card p-6 md:p-8">
+              <div class="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <h3 class="balance text-xl font-semibold text-card-foreground">在线音乐播放系统</h3>
+                  <p class="mt-1 text-sm text-muted-foreground">课程项目 · 参与前端页面与交互</p>
+                </div>
+                <span class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">参与前端实现</span>
+              </div>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="rounded-md bg-muted px-2.5 py-1 text-xs text-muted-foreground">HTML</span>
+                <span class="rounded-md bg-muted px-2.5 py-1 text-xs text-muted-foreground">CSS</span>
+                <span class="rounded-md bg-muted px-2.5 py-1 text-xs text-muted-foreground">JavaScript</span>
+                <span class="rounded-md bg-muted px-2.5 py-1 text-xs text-muted-foreground">页面交互</span>
+              </div>
+              <p class="mt-5 text-sm leading-relaxed text-muted-foreground">课程小组项目，我主要参与前端页面与交互实现。完成了歌曲列表、检索结果、歌单收藏等页面的结构与样式，并尝试用 JavaScript 实现简单的前端交互。</p>
+              <div class="mt-5">
+                <h4 class="text-sm font-semibold text-card-foreground">负责内容</h4>
+                <ul class="mt-2 list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted-foreground">
+                  <li>负责歌曲列表、检索页、收藏歌单等前端页面的 HTML/CSS 实现，保证页面结构清晰、视觉统一。</li>
+                  <li>用基础 JavaScript 实现简单的检索交互与页面状态切换，提升用户体验。</li>
+                  <li>与后端同学配合调整页面字段展示，修复不同浏览器下的样式兼容问题。</li>
+                </ul>
+              </div>
+              <div class="mt-5 rounded-md border-l-2 border-primary bg-muted/50 p-4">
+                <p class="text-sm leading-relaxed text-muted-foreground"><strong class="text-foreground">收获：</strong>实践了从静态页面到简单交互的完整前端流程，对组件化页面结构有了初步认识。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="campus" class="reveal section-pad px-6 lg:px-8">
+        <div class="mx-auto max-w-6xl">
+          <div class="mb-10 flex items-center gap-4">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+              <i data-lucide="users" class="h-5 w-5"></i>
+            </div>
+            <h2 class="balance text-3xl font-bold text-foreground">校园经历</h2>
+          </div>
+          <div class="relative border-l-2 border-primary/20 pl-6 md:pl-8">
+            <article class="relative mb-10">
+              <span class="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full bg-primary md:-left-[39px]"></span>
+              <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+                <h3 class="balance text-lg font-semibold text-foreground">校学生会宿管部干事</h3>
+                <time class="text-sm text-muted-foreground">2022.09 – 2024.06</time>
+              </div>
+              <ul class="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">
+                <li>负责日常宿舍安全、卫生巡查工作，严格落实查寝制度，记录宿舍违规、卫生情况，定期汇总上报部门，保障校园住宿秩序与安全。</li>
+                <li>协助部门开展宿舍文化建设、文明宿舍评选等校园活动，负责活动前期筹备、现场组织、后期数据统计整理工作。</li>
+                <li>对接班级宿舍负责人，及时传达学校宿舍管理规章制度，收集学生住宿问题并反馈，搭建学校与学生的沟通桥梁。</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="honors" class="reveal section-pad px-6 lg:px-8 bg-muted/40">
+        <div class="mx-auto max-w-6xl">
+          <div class="mb-10 flex items-center gap-4">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+              <i data-lucide="award" class="h-5 w-5"></i>
+            </div>
+            <h2 class="balance text-3xl font-bold text-foreground">荣誉与证书</h2>
+          </div>
+          <ul class="grid gap-4 md:grid-cols-2">
+            <li class="flex items-start gap-4 rounded-lg border border-border bg-card p-5 card-lift">
+              <i data-lucide="award" class="mt-0.5 h-5 w-5 shrink-0 text-primary"></i>
+              <span class="text-sm leading-relaxed text-card-foreground">优秀学生会干部荣誉证书</span>
+            </li>
+            <li class="flex items-start gap-4 rounded-lg border border-border bg-card p-5 card-lift">
+              <i data-lucide="award" class="mt-0.5 h-5 w-5 shrink-0 text-primary"></i>
+              <span class="text-sm leading-relaxed text-card-foreground">在校期间多次获得课程优良评价，专业基础扎实</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <footer id="contact" class="reveal bg-primary px-6 py-16 text-primary-foreground lg:px-8">
+        <div class="mx-auto max-w-6xl">
+          <div class="grid gap-10 lg:grid-cols-2">
+            <div>
+              <h2 class="balance text-3xl font-bold">期待与您交流</h2>
+              <p class="mt-4 max-w-md text-primary-foreground/80">如果您有合适的实习或初级岗位机会，欢迎通过右侧按钮查看邮箱与电话，并直接发送邮件或拨打电话。</p>
+            </div>
+            <div class="flex flex-col justify-center gap-4">
+              <button type="button" data-reveal-email class="group inline-flex items-center gap-4 rounded-xl bg-primary-foreground/10 p-4 text-left transition hover:bg-primary-foreground/20">
+                <i data-lucide="mail" class="h-6 w-6"></i>
+                <div>
+                  <p class="text-xs uppercase tracking-wider opacity-70">邮箱<span class="copy-hint"> · 再次点击可复制</span></p>
+                  <p class="footer-email text-lg font-medium">点击显示邮箱地址</p>
+                </div>
+                <i data-lucide="arrow-right" class="icon-slide ml-auto h-5 w-5"></i>
+              </button>
+              <button type="button" data-reveal-phone class="group inline-flex items-center gap-4 rounded-xl bg-primary-foreground/10 p-4 text-left transition hover:bg-primary-foreground/20">
+                <i data-lucide="phone" class="h-6 w-6"></i>
+                <div>
+                  <p class="text-xs uppercase tracking-wider opacity-70">电话<span class="copy-hint"> · 再次点击可复制</span></p>
+                  <p class="footer-phone text-lg font-medium">点击显示电话号码</p>
+                </div>
+                <i data-lucide="arrow-right" class="icon-slide ml-auto h-5 w-5"></i>
+              </button>
+            </div>
+          </div>
+          <div class="mt-16 border-t border-primary-foreground/20 pt-6 text-sm text-primary-foreground/60">
+            <p>朱曦 · 软件工程本科 · 2026</p>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <div id="copy-toast" class="copy-toast" role="status" aria-live="polite">已复制</div>
+
+    <script>
+      (function() {
+        // Contact obfuscation: stored as base64 to reduce simple scraper exposure
+        var email = atob('MjE1OTEzMjY3NkBxcS5jb20=');
+        var phone = atob('MTU2NzQ0ODA1Mzc=');
+        var emailRevealed = false;
+        var phoneRevealed = false;
+
+        function showToast(message) {
+          var toast = document.getElementById('copy-toast');
+          if (!toast) return;
+          toast.textContent = message;
+          toast.classList.add('visible');
+          setTimeout(function() {
+            toast.classList.remove('visible');
+          }, 1800);
+        }
+
+        function copyText(text) {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(function() {
+              showToast('已复制：' + text);
+            }).catch(function() {
+              fallbackCopy(text);
+            });
+          } else {
+            fallbackCopy(text);
+          }
+        }
+
+        function fallbackCopy(text) {
+          var input = document.createElement('input');
+          input.value = text;
+          input.style.position = 'fixed';
+          input.style.opacity = '0';
+          document.body.appendChild(input);
+          input.select();
+          try {
+            document.execCommand('copy');
+            showToast('已复制：' + text);
+          } catch (err) {
+            showToast('复制失败，请手动复制');
+          }
+          document.body.removeChild(input);
+        }
+
+        function revealEmail() {
+          document.querySelectorAll('[data-reveal-email] .email-text').forEach(function(el) {
+            el.textContent = email;
+          });
+          document.querySelectorAll('.footer-email').forEach(function(el) {
+            el.textContent = email;
+          });
+          document.querySelectorAll('[data-email-link]').forEach(function(el) {
+            el.href = 'mailto:' + email;
+          });
+          document.querySelectorAll('[data-reveal-email]').forEach(function(el) {
+            el.setAttribute('data-revealed', 'true');
+          });
+        }
+
+        function revealPhone() {
+          document.querySelectorAll('[data-reveal-phone] .phone-text').forEach(function(el) {
+            el.textContent = phone;
+          });
+          document.querySelectorAll('.footer-phone').forEach(function(el) {
+            el.textContent = phone;
+          });
+          document.querySelectorAll('[data-phone-link]').forEach(function(el) {
+            el.href = 'tel:' + phone;
+          });
+          document.querySelectorAll('[data-reveal-phone]').forEach(function(el) {
+            el.setAttribute('data-revealed', 'true');
+          });
+        }
+
+        function revealAll() {
+          revealEmail();
+          revealPhone();
+        }
+
+        function handleEmailClick() {
+          if (!emailRevealed) {
+            revealEmail();
+            emailRevealed = true;
+          } else {
+            copyText(email);
+          }
+        }
+
+        function handlePhoneClick() {
+          if (!phoneRevealed) {
+            revealPhone();
+            phoneRevealed = true;
+          } else {
+            copyText(phone);
+          }
+        }
+
+        document.querySelectorAll('[data-reveal-email]').forEach(function(btn) {
+          btn.addEventListener('click', handleEmailClick);
+        });
+
+        document.querySelectorAll('[data-reveal-phone]').forEach(function(btn) {
+          btn.addEventListener('click', handlePhoneClick);
+        });
+
+        document.querySelectorAll('[data-email-link]').forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            if (!link.href || link.href === '#' || link.href === window.location.href + '#') {
+              e.preventDefault();
+              revealEmail();
+              emailRevealed = true;
+              window.location.href = 'mailto:' + email;
+            }
+          });
+        });
+
+        document.querySelectorAll('[data-phone-link]').forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            if (!link.href || link.href === '#' || link.href === window.location.href + '#') {
+              e.preventDefault();
+              revealPhone();
+              phoneRevealed = true;
+              window.location.href = 'tel:' + phone;
+            }
+          });
+        });
+
+        if (window.lucide) lucide.createIcons();
+      })();
+
+      // Vue 3: data-driven skills section
+      document.addEventListener('DOMContentLoaded', function() {
+        if (!window.Vue) return;
+        var app = Vue.createApp({
+          data: function() {
+            return {
+              skills: [
+                { icon: 'layout', title: 'HTML / CSS', desc: '能独立完成静态页面搭建、Flex / Grid 布局、响应式适配，注重语义化标签与可维护的样式结构。' },
+                { icon: 'code-2', title: 'JavaScript', desc: '能够实现 DOM 操作、事件交互、表单验证、简单数据渲染等前端基础功能，持续补充 ES6+ 与现代开发模式。' },
+                { icon: 'layers', title: 'Vue 3', desc: '正在用 Vue 3 做项目练习，熟悉组件化、响应式数据、指令与路由基础，能基于模板搭建小型页面。' },
+                { icon: 'sparkles', title: 'AI 辅助开发', desc: '习惯使用 Trae、Cursor 等 AI 工具辅助写代码、调样式、优化逻辑，并尝试沉淀为可复用的 Skill。' },
+                { icon: 'wrench', title: '开发工具', desc: '熟练使用 VS Code、IDEA，了解 Git 版本控制与团队协作流程，能独立完成简单页面部署。' },
+                { icon: 'eye', title: '视觉还原与细节', desc: '注重排版、间距、色彩一致性与交互细节，能够从设计稿或参考网站还原出干净、可用的页面。' }
+              ]
+            };
+          },
+          mounted: function() {
+            if (window.lucide) lucide.createIcons();
+          }
+        });
+        app.mount('#skills-app');
+      });
+
+      // Scroll reveal animation
+      document.addEventListener('DOMContentLoaded', function() {
+        var reveals = document.querySelectorAll('.reveal');
+        if (!('IntersectionObserver' in window)) {
+          reveals.forEach(function(el) { el.classList.add('visible'); });
+          return;
+        }
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        reveals.forEach(function(el) { observer.observe(el); });
+      });
+    </script>
+</body>
+</html>
